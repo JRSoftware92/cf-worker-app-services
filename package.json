@@ -1,0 +1,10 @@
+{
+  "name": "cf-worker-wrangler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "secure-worker/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true
+}

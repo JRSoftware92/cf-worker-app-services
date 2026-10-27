@@ -1,0 +1,20 @@
+name = "secure-worker"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+workers_dev = false
+
+routes = [
+  { pattern = "tunnel.johnrileyappservices.com/secure", zone_name = "johnrileyappservices.com" },
+  { pattern = "tunnel.johnrileyappservices.com/secure/*", zone_name = "johnrileyappservices.com" }
+]
+
+[vars]
+# Zero Trust > Settings > Custom Pages (or the Overview) shows your team name.
+TEAM_DOMAIN = "https://nameless-bread-f807.cloudflareaccess.com"
+# Access > Applications > your app > Overview > "Application Audience (AUD) Tag"
+POLICY_AUD = "e9f5e52a564fda67572333144efad52ab989d287b14791c4e00fbd61e17db6bf"
+
+# Private bucket: no public access / r2.dev URL is enabled, so only this Worker can read it.
+[[r2_buckets]]
+binding = "FLAGS"
+bucket_name = "country-flags"
